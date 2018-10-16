@@ -28,7 +28,7 @@ class Eod {
      * @param string $name
      * @return EodClient
      */
-    public function api(string $name) {
+    public function api($name) {
         $name = strtolower($name);
         switch ($name) {
             case 'exchange':
