@@ -5,8 +5,7 @@ namespace RadicalLoop\Eod;
 use RadicalLoop\Eod\Api\Exchange;
 use RadicalLoop\Eod\Api\Stock;
 
-class Eod
-{
+class Eod {
     /**
      * Config class variable
      *
@@ -19,8 +18,7 @@ class Eod
      *
      * @param Config $config
      */
-    public function __construct(Config $config)
-    {
+    public function __construct(Config $config) {
         $this->config = $config;
     }
 
@@ -30,8 +28,7 @@ class Eod
      * @param string $name
      * @return EodClient
      */
-    public function api(string $name)
-    {
+    public function api(string $name) {
         $name = strtolower($name);
         switch ($name) {
             case 'exchange':
@@ -55,8 +52,7 @@ class Eod
      * @param array $arguments
      * @return EodClient
      */
-    public function __call(string $name, array $arguments)
-    {
+    public function __call($name, array $arguments) {
         try {
             return $this->api($name);
         } catch (\InvalidArgumentException $exception) {
